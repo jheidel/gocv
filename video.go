@@ -20,8 +20,8 @@ type BackgroundSubtractorMOG2 struct {
 // For further details, please see:
 // https://docs.opencv.org/master/d7/d7b/classcv_1_1BackgroundSubtractorMOG2.html
 //
-func NewBackgroundSubtractorMOG2() BackgroundSubtractorMOG2 {
-	return BackgroundSubtractorMOG2{p: unsafe.Pointer(C.BackgroundSubtractorMOG2_Create())}
+func NewBackgroundSubtractorMOG2(history int, threshold float64) BackgroundSubtractorMOG2 {
+	return BackgroundSubtractorMOG2{p: unsafe.Pointer(C.BackgroundSubtractorMOG2_Create(C.int(history), C.double(threshold)))}
 }
 
 // Close BackgroundSubtractorMOG2.

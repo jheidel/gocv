@@ -1,7 +1,7 @@
 #include "video.h"
 
-BackgroundSubtractorMOG2 BackgroundSubtractorMOG2_Create() {
-    return new cv::Ptr<cv::BackgroundSubtractorMOG2>(cv::createBackgroundSubtractorMOG2());
+BackgroundSubtractorMOG2 BackgroundSubtractorMOG2_Create(int history, double threshold) {
+    return new cv::Ptr<cv::BackgroundSubtractorMOG2>(cv::createBackgroundSubtractorMOG2(history, threshold));
 }
 
 BackgroundSubtractorKNN BackgroundSubtractorKNN_Create() {

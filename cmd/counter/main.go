@@ -54,7 +54,7 @@ func main() {
 	imgCleaned := gocv.NewMat()
 	defer imgCleaned.Close()
 
-	mog2 := gocv.NewBackgroundSubtractorMOG2()
+	mog2 := gocv.NewBackgroundSubtractorMOG2(60, 16)
 	defer mog2.Close()
 
 	count := 0

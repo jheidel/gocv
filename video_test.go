@@ -15,7 +15,7 @@ func TestMOG2(t *testing.T) {
 	dst := NewMat()
 	defer dst.Close()
 
-	mog2 := NewBackgroundSubtractorMOG2()
+	mog2 := NewBackgroundSubtractorMOG2(10, 10)
 	defer mog2.Close()
 
 	mog2.Apply(img, &dst)
