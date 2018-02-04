@@ -346,6 +346,27 @@ void FillPoly(Mat img, Contours points, Scalar color) {
     cv::fillPoly(*img, pts, c);
 }
 
+void FillPoly(Mat img, Points con, Scalar color) {
+    //std::vector<std::vector<cv::Point> > contours;
+    //for (int i = 0; i < cons.length; i++) {
+    //        std::vector<cv::Point> points = contours.emplace_back();
+    //        for (int j = 0; j < cons.contours[i].length; j++) {
+    //                points.emplace_back(cons.contours[i].points[j].x, cons.contours[i].points[j].y);
+    //        }
+    //}
+
+        // TODO emplace
+    std::vector<std::vector<cv::Point> > contours;
+    std::vector<cv::Point> contour;
+    for (int i = 0; i < con.length; i++) {
+        contour.push_back(cv::Point(con.points[i].x, con.points[i].y));
+    }
+    contours.push_back(contour);
+
+    cv::Scalar c = cv::Scalar(color.val1, color.val2, color.val3, color.val4);
+    cv::fillPoly(*img, contours, c, CV_AA);
+}
+
 struct Size GetTextSize(const char* text, int fontFace, double fontScale, int thickness) {
     cv::Size sz = cv::getTextSize(text, fontFace, fontScale, thickness, NULL);
     Size size = {sz.width, sz.height};
