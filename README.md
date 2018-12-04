@@ -298,7 +298,7 @@ By default, pkg-config is used to determine the correct flags for compiling and 
 
 For example:
 
-	export CGO_CXXFLAGS="--std=c++11"
+	export CGO_CXXFLAGS="-std=c++11"
 	export CGO_CPPFLAGS="-I/usr/local/Cellar/opencv/4.0.0/include"
 	export CGO_LDFLAGS="-L/usr/local/Cellar/opencv/4.0.0/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dnn_objdetect -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_dnn -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core"
 
@@ -370,7 +370,7 @@ Due to the way OpenCV produces DLLs, including the version in the name, using th
 
 For example:
 
-	set CGO_CXXFLAGS="--std=c++11"
+	set CGO_CXXFLAGS="-std=c++11"
 	set CGO_CPPFLAGS=-IC:\opencv\build\install\include
 	set CGO_LDFLAGS=-LC:\opencv\build\install\x64\mingw\lib -lopencv_core400 -lopencv_face400 -lopencv_videoio400 -lopencv_imgproc400 -lopencv_highgui400 -lopencv_imgcodecs400 -lopencv_objdetect400 -lopencv_features2d400 -lopencv_video400 -lopencv_dnn400 -lopencv_xfeatures2d400 -lopencv_plot400 -lopencv_tracking400 -lopencv_img_hash400
 
